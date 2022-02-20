@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Title -->
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div class="calculator-container">
+        <div></div>
+        <div class="calculator">
+            <div class="result">
+                <div class="history">
+                    <p class="history-value" id="history-value">
+                        9 + 2
+                    </p>
+                </div>
+                <div class="output">
+                    <p class="output-value">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="mid-border"></div>
+            <div class="keyboard">
+                <!-- Row 1 -->
+                <button class="operator clear" id="clear">
+                    C
+                </button>
+                <button class="operator backspace" id="backspace">
+                    CE
+                </button>
+                <button class="operator mod" id="%">
+                    %
+                </button>
+                <button class="operator divide" id="/">
+                    &#247;
+                </button>
+
+                <!-- Row 2 -->
+                <button class="number 7" id="7">
+                    7
+                </button>
+                <button class="number 8" id="8">
+                    8
+                </button>
+                <button class="number 9" id="9">
+                    9
+                </button>
+                <button class="operator multi" id="*">
+                    &times
+                </button>
+
+                <!-- Row 3 -->  
+                <button class="number 4" id="4">
+                    4
+                </button>
+                <button class="number 5" id="5">
+                    5
+                </button>
+                <button class="number 6" id="6">
+                    6
+                </button>
+                <button class="operator minus" id="-">
+                    -
+                </button>
+
+                <!-- Row 4 -->
+                <button class="number 1" id="1">
+                    1
+                </button>
+                <button class="number 2" id="2">
+                    2
+                </button>
+                <button class="number 3" id="3">
+                    3
+                </button>
+                <button class="operator plus" id="+">
+                    +
+                </button>
+
+                <!-- Row 5 -->
+                <button class="empty" id="empty">
+                    
+                </button>
+                <button class="number 0" id="0">
+                    0
+                </button>
+                <button class="empty" id="empty">
+
+                </button>
+                <button class="operator equals" id="=">
+                    =
+                </button>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <!-- Script -->
+    <script src="./js/script.js" defer></script>
+</body>
+</html>
