@@ -4,9 +4,11 @@ let operators = document.getElementsByClassName("operator");
 
 //----- Event listeners -----//
 
-//Operators
+// Operators
 for (var i = 0; i < operators.length; i++) {
     operators[i].addEventListener('click', function () {
+
+        // Clear (C) and Backspace (CE) handling
         if (this.id === "clear" || this.id === "backspace") {
             if (this.id === "clear") {
                 showHistory(0)
@@ -32,16 +34,22 @@ for (var i = 0; i < operators.length; i++) {
                 }
             }
         }
+
+        // Modulo, Division, Multiplication, Minus, Plus and Equal handling 
         else {
             var output = reverseNumber(getOutput());
             var history = (getHistory());
             if (output !== "0" || history !== 0) {
                 history = history + output;
+
+                // Equal handling
                 if (this.id === "=") {
                     var result = eval(history);
                     showOutput(result);
                     showHistory(0);
                 }
+
+                // Modulo, Division, Multiplication, Minus and Plus handling
                 else {
                     if (history.charAt(0) === "0") {
                         history = formattedNumber(history);
@@ -60,6 +68,8 @@ for (var i = 0; i < operators.length; i++) {
     })
 }
 
+
+// Numbers
 let numbers = document.getElementsByClassName("number");
 for (var i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener('click', function () {
@@ -79,26 +89,33 @@ for (var i = 0; i < numbers.length; i++) {
 
 
 //----- Methods -----//
+
+// Get history value
 function getHistory() {
     return historyValue.innerText;
 }
 
+// Set history value
 function showHistory(num) {
     historyValue.innerText = num;
 }
 
+// Get output value
 function getOutput() {
     return outputValue.innerText;
 }
 
+// Set output value
 function showOutput(num) {
     outputValue.innerText = formattedNumber(num);
 }
 
+// Convert from String to Number
 function formattedNumber(num) {
     return Number(num).toLocaleString("en");
 }
 
+// Remove ',' from output values
 function reverseNumber(num) {
     return Number(num.replace(/,/g, ''));
 }
